@@ -1,0 +1,228 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway&family=Rowdies:wght@300&display=swap');
+/*properties*/
+:root {
+    /*colors-theme*/
+    --primary-color: #161616;
+    --second-color: #150050;
+    --third-color: #0d0018;
+    --fourt-color: #570530;
+    /**/
+    --fondo: #161616;
+    --rojo : #ee0000;
+
+    --text-color : #F4F4F4;
+    --link-color: #F2F2F2;
+}
+/*reset*/
+body {
+    background-color: var(--third-color);
+    color: var(--text-color);
+    font-family: 'Raleway', sans-serif;
+    font-family: 'Rowdies', cursive;
+}
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+img{
+    width: 100%;
+}
+
+.pelicula-box img {
+    width: 20%;
+}
+
+a {
+    text-decoration: none;
+}
+
+/*------utilities------*/
+.contenedor {
+    width: 90%;
+    margin:0 auto;
+}
+
+/*------components------*/
+.logotipo {
+    color: var(--second-color);
+}
+
+.indicadores button {
+    width: 10px;
+    height: 3px;
+    margin-right: 2px;
+    background-color: #fff;
+    border: none;
+}
+
+.indicadores button:hover,
+.indicadores button.activo {
+    background-color: var(--rojo);
+}
+
+/*------site styles------*/
+
+header {
+    padding: 1rem 0;
+}
+
+header .contenedor{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .contenedor nav a {
+    text-decoration: none;
+    font-size: 1.28rem;
+    margin-right: 1.4rem;
+    color: var(--link-color);
+}
+
+/*pelicula-principal*/
+
+.peliculas-principales {
+    margin-bottom: 4rem;
+    position: relative;
+}
+
+.peliculas-principales .flecha-izquierda,
+.peliculas-principales .flecha-derecha {
+    position: absolute;
+    color: #fff;
+    font-size: 3rem;
+    width: 40px;
+    height: 50%;
+    top: calc(50% - 25%);
+    background: rgb(0, 0, 0, 0.3);
+    border: none;
+    cursor: pointer;
+    transition: all .3s ease;
+}
+
+
+.peliculas-principales .flecha-izquierda:hover,
+.peliculas-principales .flecha-derecha:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.peliculas-principales .flecha-izquierda {
+    left: 0;
+}
+
+.peliculas-principales .flecha-derecha {
+    right: 0;
+}
+
+/*contenedor-carousel*/
+.contenedor-carousel {
+    height: 60vh;
+    overflow: hidden;
+    scroll-behavior: smooth;
+}
+.contenedor-carousel .carousel {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.contenedor-carousel .carousel .pelicula  {
+    width: 100%;
+    min-width: 90vw;
+}
+
+.contenedor-carousel .carousel .pelicula img {
+    width:100%;
+    height: 100%;
+
+    background-size: cover;
+}
+
+/*peliculas-recomendadas*/
+.peliculas-recomendadas .contenedor-titulo-controles h3 {
+    font-size: 2rem;
+}
+
+.peliculas-recomendadas .contenedor-titulo-controles {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+/*contenedor-lista-peliculas*/
+.contenedor-lista-peliculas {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow: hidden;
+
+}
+
+.contenedor-lista-peliculas .pelicula-card {
+    width: 100%;
+    padding: 1rem 0;
+}
+.contenedor-lista-peliculas .pelicula-box{
+   /* position: absolute;*/
+    width: 100%;
+    text-align: center;
+    vertical-align:bottom;
+    transition: all .3s ease;
+}
+
+.contenedor-lista-peliculas .pelicula-box:hover {
+transform: scale(1.2);
+ }
+
+.contenedor-lista-peliculas .pelicula-box img {
+   /* position: absolute;*/
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+}
+
+.contenedor-lista-peliculas .pelicula-box h2 {
+    z-index: 1000;
+    font-size: 1.4rem;
+    color: #fff;
+}
+
+/*FORMULARIO*/
+.formulario {
+    background: linear-gradient(var(--second-color), var(--fourt-color));
+    border-radius: 20px;
+}
+
+
+@media (max-width: 890px) {
+    .contenedor-lista-peliculas {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .indicadores {
+        display: none;
+    }
+}
+
+@media (max-width: 600px) {
+    .contenedor-carousel {
+        height: 40vh;
+    }
+    .peliculas-recomendadas .contenedor-titulo-controles h3 {
+        font-size: 1.6rem;
+    }
+    .indicadores {
+        display: none;
+    }
+
+    .contenedor-lista-peliculas {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+}

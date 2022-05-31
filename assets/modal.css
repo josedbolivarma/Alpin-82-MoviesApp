@@ -1,0 +1,59 @@
+/*modal*/
+.modal {
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.6);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 1s;
+}
+
+.contenedor-modal {
+    position: relative;
+    padding: 2rem 3rem;
+    background-color: #fff;
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+}
+
+.contenedor-modal h2 {
+    color: #222;
+    margin-bottom: .4rem;
+    font-size: 2rem;
+}
+
+.contenedor-modal p {
+    text-align: left;
+    font-size: 1.2rem;
+    line-height: 30px;
+    color: #333;
+}
+
+
+.cerrar-modal {
+    position: absolute;
+    top: -0.8rem;
+    right: 1rem;
+    font-size: 4rem;
+}
+
+.cerrar-modal img {
+    width: 2rem;
+    height: 2rem;
+    fill: #fff;
+}
+
+
+.modal[id|="pelicula"]:target {
+    opacity: 1;
+    pointer-events: auto;
+}
+
